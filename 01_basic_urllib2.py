@@ -1,3 +1,4 @@
+# encoding: utf-8
 import urllib2
 
 request = urllib2.Request("http://blog.marsw.tw")
