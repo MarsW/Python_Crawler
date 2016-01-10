@@ -7,8 +7,9 @@ response = urllib2.urlopen(request)
 html = response.read()
 
 page = etree.HTML(html)
+count = 0
 for url in page.xpath(u"//img/@src"):
-	if url.startswith("http:") and (url.endswith("JPG") or url.endswith("jpg") or url.endswith("png") or url.endswith("jpeg")) :
+	if url.startswith("http:"):
 		print url
 		
 		try:
@@ -23,3 +24,4 @@ for url in page.xpath(u"//img/@src"):
 		pic_out = file(filename,'w')
 		pic_out.write(img)
 		pic_out.close()
+		
